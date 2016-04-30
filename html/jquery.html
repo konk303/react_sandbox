@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>react concept in jquery</title>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+  </head>
+  <body>
+    <h1>ReactをjQueryの数行に要約する</h1>
+    <p>evaluating <a href="http://postd.cc/boiling-react-down-to-a-few-lines-in-jquery/">http://postd.cc/boiling-react-down-to-a-few-lines-in-jquery/</a></p>
+
+    <span id="colored-counter">0</span>
+    <input id="color"></input>
+    <button id="inc">inc</button>
+
+    <script>
+     $(document).on('ready page:load', function() {
+       $('#color').on('keyup', function () {
+         $('#colored-counter').css('color', this.value);
+       });
+
+       $('#inc').on('click', function () {
+         var oldValue = $('#colored-counter').html();
+         var newValue = 1 + Number(oldValue);
+         $('#colored-counter').html(newValue);
+       });
+     });
+    </script>
+  </body>
+</html>
